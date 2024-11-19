@@ -10,11 +10,11 @@ app = Flask(__name__)
 
 # inisialisasi Google Cloud Storage client
 storage_client = storage.Client()
-bucket_name = "nama-bucket-anda"  # ganti dengan nama bucket kamu
+bucket_name = "nama-bucket-anda"  # ganti dengan nama bucket 
 bucket = storage_client.get_bucket(bucket_name)
 
 # inisialisasi OCR model dari Doctr
-ocr_model = ocr.deserialize("craft_mlt_keras")  # kamu bisa sesuaikan dengan model yang kamu pilih
+ocr_model = ocr.deserialize("craft_mlt_keras")  # bisa sesuaikan dengan model yang dipilih
 
 @app.route("/upload", methods=["POST"])
 def upload_image():
