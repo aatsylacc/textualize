@@ -1,5 +1,3 @@
-ML/models/summarize/textualize_model/tf_model.h5
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
