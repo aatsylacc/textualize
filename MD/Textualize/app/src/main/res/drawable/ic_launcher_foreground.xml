@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Outer Circle Border -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,5C79.54,5 99,24.46 99,50C99,75.54 79.54,95 54,95C28.46,95 9,75.54 9,50C9,24.46 28.46,5 54,5ZM54,10C32.5,10 15,27.5 15,50C15,72.5 32.5,90 54,90C75.5,90 93,72.5 93,50C93,27.5 75.5,10 54,10Z" />
+
+    <!-- Camera Icon -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M32,40H76C81.52,40 86,44.48 86,50V72C86,77.52 81.52,82 76,82H32C26.48,82 22,77.52 22,72V50C22,44.48 26.48,40 32,40ZM54,72C60.63,72 66,66.63 66,60C66,53.37 60.63,48 54,48C47.37,48 42,53.37 42,60C42,66.63 47.37,72 54,72ZM70,56C71.1,56 72,55.1 72,54C72,52.9 71.1,52 70,52C68.9,52 68,52.9 68,54C68,55.1 68.9,56 70,56Z" />
+
+    <!-- Text Symbol "T" -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M50,65h8v-8h-8v8zM46,65v-8h-4v-4h4v-8h4v8h4v4h-4v8h-4z"
+        android:translateX="@dimen/text_x_position"
+        android:translateY="@dimen/text_y_position" />
+</vector>
