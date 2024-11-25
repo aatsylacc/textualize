@@ -3,7 +3,7 @@ const axios = require('axios');
 const ocrHandler = async (req, res) => {
     const { image_url } = req.body;  // ambil URL gambar dari request body
 
-    // validasi input: cek apakah image_url ada
+    // validasi input: cek image_url ada atau engga
     if (!image_url) {
         return res.status(400).json({
             error: true,
