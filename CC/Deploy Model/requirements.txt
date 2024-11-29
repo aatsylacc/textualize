@@ -1,6 +1,0 @@
-flask
-python-doctr[tf]
-tensorflow==2.17.1
-numpy
-opencv-python
-Pillow
