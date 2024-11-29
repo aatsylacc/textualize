@@ -1,11 +1,11 @@
 {
-  "_name_or_path": "facebook/bart-large-cnn",
+  "_name_or_path": "text_model",
   "_num_labels": 3,
   "activation_dropout": 0.0,
   "activation_function": "gelu",
   "add_final_layer_norm": false,
   "architectures": [
-    "BartForConditionalGeneration"
+    "BartModel"
   ],
   "attention_dropout": 0.0,
   "bos_token_id": 0,
@@ -18,7 +18,7 @@
   "decoder_layers": 12,
   "decoder_start_token_id": 2,
   "dropout": 0.1,
-  "early_stopping": true,
+  "early_stopping": null,
   "encoder_attention_heads": 16,
   "encoder_ffn_dim": 4096,
   "encoder_layerdrop": 0.0,
@@ -40,14 +40,14 @@
     "LABEL_1": 1,
     "LABEL_2": 2
   },
-  "length_penalty": 2.0,
-  "max_length": 142,
+  "length_penalty": null,
+  "max_length": null,
   "max_position_embeddings": 1024,
-  "min_length": 56,
+  "min_length": null,
   "model_type": "bart",
-  "no_repeat_ngram_size": 3,
+  "no_repeat_ngram_size": null,
   "normalize_before": false,
-  "num_beams": 4,
+  "num_beams": null,
   "num_hidden_layers": 12,
   "output_past": true,
   "pad_token_id": 1,
@@ -63,7 +63,8 @@
       "num_beams": 4
     }
   },
-  "transformers_version": "4.46.2",
+  "torch_dtype": "float32",
+  "transformers_version": "4.46.3",
   "use_cache": true,
   "vocab_size": 50264
 }
