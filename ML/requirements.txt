@@ -1,0 +1,6 @@
+flask
+keras
+numpy
+requests
+google-cloud-storage
+python-doctr[tf] 
