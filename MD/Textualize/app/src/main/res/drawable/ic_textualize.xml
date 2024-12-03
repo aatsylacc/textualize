@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Background Circle -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M54,0C83.82,0 108,24.18 108,54C108,83.82 83.82,108 54,108C24.18,108 0,83.82 0,54C0,24.18 24.18,0 54,0Z" />
+
+    <!-- Camera Icon -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,40H76C81.52,40 86,44.48 86,50V72C86,77.52 81.52,82 76,82H32C26.48,82 22,77.52 22,72V50C22,44.48 26.48,40 32,40ZM54,72C60.63,72 66,66.63 66,60C66,53.37 60.63,48 54,48C47.37,48 42,53.37 42,60C42,66.63 47.37,72 54,72ZM70,56C71.1,56 72,55.1 72,54C72,52.9 71.1,52 70,52C68.9,52 68,52.9 68,54C68,55.1 68.9,56 70,56Z" />
+
+    <!-- Text Symbol "T" -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M48,65h8v-8h-8v8zM44,65v-8h-4v-4h4v-8h4v8h4v4h-4v8h-4z"
+        android:translateX="@dimen/text_x_position"
+        android:translateY="@dimen/text_y_position" />
+</vector>

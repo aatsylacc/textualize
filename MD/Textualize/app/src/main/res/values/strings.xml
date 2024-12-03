@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Textualize</string>
+    <string name="gallery">galeri</string>
+    <string name="open_gallery">Buka galeri</string>
+    <string name="open_camera">Buka kamera</string>
+    <string name="title">Judul</string>
+    <string name="description">Deskripsi</string>
+    <string name="save">SIMPAN</string>
+    <string name="empty_result">Belum ada hasil</string>
+    <string name="result">Hasil</string>
+</resources>
