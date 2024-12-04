@@ -3,4 +3,5 @@ keras
 numpy
 requests
 google-cloud-storage
-python-doctr[tf] 
+python-doctr[tf]
+gunicorn
