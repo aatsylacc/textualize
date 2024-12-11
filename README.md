@@ -7,15 +7,15 @@ Textualize adalah sebuah proyek berbasis cloud yang bertujuan untuk menyediakan 
 
 ### Team Members
 
-#### Mobile Development Team:
-- A464B4KY1639 - Goldan Amore
-- A464B4KY2547 - Moh. Hedar Rozak
+#### Cloud Computing Team:
+- C315B4KX0718 - Audrey Restu Rahmi
+- C315B4KX3272 - Nathania Calista Hallatu
 
 #### Machine Learning Team: 
 - M315B4KY0119 - Adityo Pangestu
 - M315B4KY0124 - Adnan Al Qadri
 - M315B4KX0582 - Annisa Reida Raheima
 
-#### Cloud Computing Team:
-- C315B4KX0718 - Audrey Restu Rahmi
-- C315B4KX3272 - Nathania Calista Hallatu
+#### Mobile Development Team:
+- A464B4KY1639 - Goldan Amore
+- A464B4KY2547 - Moh. Hedar Rozak
