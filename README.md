@@ -1,7 +1,7 @@
 # **Textualize**
 
-### **Deskripsi Singkat**
-Textualize adalah sebuah proyek berbasis cloud yang bertujuan untuk menyediakan layanan API yang dapat merangkum teks panjang menjadi teks yang lebih singkat, mengunggah gambar beserta metadata (judul dan deskripsi) ke penyimpanan cloud, dan mengelola data pengguna dan autentikasi menggunakan database.
+### **Overview**
+Textualize is an application designed to streamline the process of extracting and summarizing information from scanned documents or handwritten notes. It allows users to upload images of English text (printed or handwritten), converts them to digital text using Optical Character Recognition (OCR), and generates concise summaries. The project involves two key models: an OCR model for text extraction and a Seq2Seq model for summarization. Built on TensorFlow, the application leverages custom and transfer learning to improve accuracy and efficiency, aiming to save time and reduce errors in text processing for academic and professional use.
 
 ## Bangkit Team Capstone Project "C242-PS347"
 

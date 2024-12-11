@@ -1,206 +1,198 @@
-# README
+# Project: Textualize
 
-## **Proyek: Textualize**
+### Brief Description
 
-### **Deskripsi Singkat**
-Textualize adalah sebuah proyek berbasis cloud yang bertujuan untuk menyediakan layanan API yang dapat:
-- Merangkum teks panjang menjadi teks yang lebih singkat.
-- Mengunggah gambar beserta metadata (judul dan deskripsi) ke penyimpanan cloud.
-- Mengelola data pengguna dan autentikasi menggunakan database.
+Textualize is a cloud-based project designed to provide an API service that can:
 
-Proyek ini memanfaatkan Python Flask untuk model Machine Learning, Express.js untuk backend utama, serta berbagai layanan Google Cloud Platform (GCP) untuk deployment.
+  * Summarize long text into shorter content.
+  * Upload images with metadata (title and description) to cloud storage.
+  * Manage user data and authentication using a database.
 
----
+This project uses Python Flask for the Machine Learning model, Express.js for the main backend, and various Google Cloud Platform (GCP) services for deployment.
 
-### **Fitur Utama**
-1. **Endpoint Summarize (Flask):**
-   - Merangkum teks lebih dari 10 kata menjadi teks yang lebih singkat.
-   - Mengembalikan pesan error jika teks kurang dari 10 kata.
+### Key Features
 
-2. **Endpoint Upload (Express.js):**
-   - Mengunggah file gambar ke Google Cloud Storage.
-   - Menyimpan metadata (URL gambar, judul, deskripsi) ke MySQL.
+  1. **Summarize Endpoint (Flask)**:
+     - Summarizes text longer than 10 words.
+     - Returns an error message if the text is fewer than 10 words.
+  
+  2. **Upload Endpoint (Express.js)**:
+     - Uploads image files to Google Cloud Storage.
+     - Stores metadata (image URL, title, description) in MySQL.
+  
+  3. **Items Endpoint (Express.js)**:
+     - Fetches all image data and metadata from the database.
+     - Supports data retrieval by user ID.
+  
+  4. **Authentication Endpoint (Express.js)**:
+     - **Register**: Register a new user.
+     - **Login**: Authenticate a user.
+     - **Logout**: Remove user session.
 
-3. **Endpoint Items (Express.js):**
-   - Mengambil semua data gambar dan metadata dari database.
-   - Mendukung pengambilan data berdasarkan user ID.
+### Technologies Used
 
-4. **Endpoint Autentikasi (Express.js):**
-   - **Register:** Mendaftarkan pengguna baru.
-   - **Login:** Mengotentikasi pengguna.
-   - **Logout:** Menghapus sesi pengguna.
+  * **Backend**:
+    - Python Flask
+    - Express.js (Node.js)
+  
+  * **Database**:
+    - Google Cloud SQL (MySQL)
+  
+  * **File Storage**:
+    - Google Cloud Storage
+  
+  * **Deployment**:
+    - Docker, Docker Hub
+    - Google Cloud Run
 
----
+### Installation and Setup
 
-### **Teknologi yang Digunakan**
-- **Backend:**
-  - Python Flask
-  - Express.js (Node.js)
+#### 1. Running the Flask API
 
-- **Database:**
-  - Google Cloud SQL (MySQL)
+  1. Clone the repository.
+  2. Navigate to the Flask project directory.
+  3. Install dependencies: 
 
-- **Penyimpanan File:**
-  - Google Cloud Storage
+        `pip install -r requirements.txt`
 
-- **Deployment:**
-  - Docker, Docker Hub
-  - Google Cloud Run
+  4. Run the local server:
 
----
+        `python app.py`
 
-### **Cara Instalasi dan Menjalankan Proyek**
+#### 2. Running the Express.js API
 
-#### **1. Menjalankan Flask API**
-1. Clone repository ini.
-2. Masuk ke direktori proyek Flask.
-3. Install dependensi:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Jalankan server lokal:
-   ```bash
-   python app.py
-   ```
+  1. Navigate to the Express project directory.
+  2. Install dependencies:
 
-#### **2. Menjalankan Express.js API**
-1. Masuk ke direktori proyek Express.
-2. Install dependensi:
-   ```bash
-   npm install
-   ```
-3. Jalankan server lokal:
-   ```bash
-   npm start
-   ```
+        `npm install`
 
-#### **3. Deployment dengan Docker**
-1. Build Docker image:
-   ```bash
-   docker build -t <nama-image> .
-   ```
-2. Push image ke Docker Hub:
-   ```bash
-   docker push <username-dockerhub>/<nama-image>
-   ```
-3. Deploy ke Google Cloud Run:
-   - Buka Google Cloud Console.
-   - Pilih Cloud Run, buat service baru, dan gunakan image dari Docker Hub.
+  3. Run the local server:
 
----
+        `npm start`
 
-### **Endpoint API**
+#### 3. Deployment with Docker
 
-#### **1. Endpoint Summarize (Flask)**
-- **URL:** `/summarize`
-- **Method:** POST
-- **Request Body:**
-  ```json
-  {
-    "text": "<teks panjang>"
-  }
-  ```
-- **Response Sukses:**
-  ```json
-  {
-    "status": "success",
-    "summary": "<ringkasan teks>"
-  }
-  ```
-- **Response Error:**
-  ```json
-  {
-    "status": "error",
-    "message": "Teks harus lebih dari 10 kata."
-  }
-  ```
+  1. Build Docker image: 
 
-#### **2. Endpoint Upload (Express.js)**
-- **URL:** `/upload`
-- **Method:** POST
-- **Request Body:**
-  - Form Data:
-    - `file`: file gambar
-    - `title`: string
-    - `description`: string
-- **Response Sukses:**
-  ```json
-  {
-    "status": "success",
-    "data": {
-      "url": "<public URL gambar>",
-      "title": "<judul>",
-      "description": "<deskripsi>"
+        `docker build -t <image-name> .`
+
+  2. Push image to Docker Hub: 
+
+        `docker push <dockerhub-username>/<image-name>`
+
+  3. Deploy to Google Cloud Run:
+     * Open Google Cloud Console.
+     * Choose Cloud Run, create a new service, and use the image from Docker Hub.
+
+### API Endpoints
+
+#### 1. Summarize Endpoint (Flask)
+  - **URL**: `/summarize`
+  - **Method**: POST
+  - **Request Body**:
+
+        {
+      "text": "<long text>"
     }
-  }
-  ```
 
-#### **3. Endpoint Items (Express.js)**
-- **URL:** `/items`
-- **Method:** GET
-- **Response Sukses:**
-  ```json
-  {
-    "status": "success",
-    "data": [
-      {
-        "id": 1,
-        "url": "<public URL>",
-        "title": "<judul>",
-        "description": "<deskripsi>"
+  - **Success Response**:
+
+        {
+      "status": "success",
+      "summary": "<text summary>"
+    }
+
+  - **Error Response**:
+
+        {
+      "status": "error",
+      "message": "Text must be more than 10 words."
+    }
+
+#### 2. Upload Endpoint (Express.js)
+
+  - **URL**: `/upload`
+  - **Method**: POST
+  - **Request Body**:
+    - Form Data:
+      - `file`: image file
+      - `title`: string
+      - `description`: string
+  - **Success Response**:
+
+        {
+      "status": "success",
+      "data": {
+        "url": "<public image URL>",
+        "title": "<title>",
+        "description": "<description>"
       }
-    ]
-  }
-  ```
-
-#### **4. Endpoint Autentikasi (Express.js)**
-- **Register:**
-  - **URL:** `/register`
-  - **Method:** POST
-  - **Request Body:**
-    ```json
-    {
-      "email": "<email>",
-      "username": "<username>",
-      "password": "<password>",
-      "confirm_password": "<konfirmasi password>"
     }
-    ```
 
-- **Login:**
-  - **URL:** `/login`
-  - **Method:** POST
-  - **Request Body:**
-    ```json
-    {
-      "username": "<username>",
-      "password": "<password>"
+#### 3. Items Endpoint (Express.js)
+
+  - **URL**: `/items`
+  - **Method**: GET
+  - **Success Response**:
+
+        {
+      "status": "success",
+      "data": [
+        {
+          "id": 1,
+          "url": "<public URL>",
+          "title": "<title>",
+          "description": "<description>"
+        }
+      ]
     }
-    ```
 
-- **Logout:**
-  - **URL:** `/logout`
-  - **Method:** POST
+#### 4. Authentication Endpoint (Express.js)
 
----
+  - **Register**:
 
-### **Struktur Database**
-- **Tabel:** `items`
-  - Kolom:
-    - `id` (integer, primary key, auto increment)
-    - `url` (string, public URL gambar)
-    - `title` (string)
-    - `description` (string)
-- **Tabel:** `users`
-  - Kolom:
-    - `id` (integer, primary key, auto increment)
-    - `email` (string, unique)
-    - `username` (string, unique)
-    - `password` (hashed string)
+    - **URL**: `/register`
+    - **Method**: POST
+    - **Request Body**:
 
----
+                {
+          "email": "<email>",
+          "username": "<username>",
+          "password": "<password>",
+          "confirm_password": "<confirm password>"
+        }
 
-### **Dokumentasi Tambahan**
-- **API Documentation:** [Postman Documentation](https://documenter.getpostman.com/view/27063468/2sAYBbepKT)
+  - **Login**:
 
----
+    - **URL**: `/login`
+    - **Method**: POST
+    - **Request Body**:
+
+                {
+          "username": "<username>",
+          "password": "<password>"
+        }
+
+  - **Logout**:
+
+    - **URL**: `/logout`
+    - **Method**: POST
+
+### Database Structure
+
+  * **Table**: `items`
+    - Columns:
+      - `id` (integer, primary key, auto increment)
+      - `url` (string, public image URL)
+      - `title` (string)
+      - `description` (string)
+  * **Table**: `users`
+    - Columns:
+      - `id` (integer, primary key, auto increment)
+      - `email` (string, unique)
+      - `username` (string, unique)
+      - `password` (hashed string)
+
+### Additional Documentation
+
+  * API Documentation: [Postman Documentation](https://documenter.getpostman.com)
